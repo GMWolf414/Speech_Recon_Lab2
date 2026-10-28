@@ -1,7 +1,7 @@
 # Sprawozdanie — Laboratorium 2
 **Autor / grupa:** **Oskar Pietrzak GL.03**  
 **Data wykonania zajęć:** **28.10.2026**   
-**Kod:** `laboratorium_02_rozwiazanie.ipynb`
+**Kod:** `laboratorium_02.ipynb`
 
 ## 1. Cel ćwiczenia
 
