@@ -1,11 +1,7 @@
-# Sprawozdanie — Laboratorium 2: Sieci rekurencyjne: budowa i uczenie
-
-**Przedmiot:** Uczenie głębokie w systemach rozpoznawania i przetwarzania mowy  
-**Zajęcia nr / temat:** Laboratorium 2 — Sieci rekurencyjne: budowa i uczenie  
-**Autor / grupa:** **[UZUPEŁNIJ: imię, nazwisko i grupa laboratoryjna]**  
-**Data wykonania zajęć:** **[UZUPEŁNIJ: datę zajęć / oddania]**  
-**Środowisko obliczeń:** Python, NumPy, PyTorch, Matplotlib; CPU (2 wątki).  
-**Kod:** `laboratorium_02_rozwiazanie.ipynb` — wykonane komórki BLOK 01–15.
+# Sprawozdanie — Laboratorium 2
+**Autor / grupa:** **Oskar Pietrzak GL.03**  
+**Data wykonania zajęć:** **28.10.2026**   
+**Kod:** `laboratorium_02_rozwiazanie.ipynb`
 
 ## 1. Cel ćwiczenia
 
@@ -23,8 +19,6 @@ Celem laboratorium była implementacja i analiza sieci rekurencyjnych przewiduj�
 - **Eksperyment B:** Wydłużenie okna GRU z 10 do 60 kroków poprawi predykcję, zaś dalsze wydłużenie do 120 może nie dać wyraźnej poprawy.
 
 **Najważniejsze fragmenty implementacji:** BLOK 03 — tworzenie okien i podział chronologiczny; BLOK 04 — model; BLOK 05 — pętla uczenia i historie trening/test; BLOK 08 — eksperyment z trzema ziarnami i obliczanie statystyk.
-
-**[DO UZUPEŁNIENIA, jeśli notatnik zostanie uruchomiony w innym środowisku:]** Z BLOKU 01 odczytaj użyte urządzenie; z BLOKU 03 liczbę przykładów przy OKNO=30. Liczebności dla wszystkich okien wynikają z funkcji w BLOKU 03.
 
 ## 3. Wyniki
 
@@ -109,8 +103,6 @@ Spośród wszystkich unikalnych badanych konfiguracji najmniejsze średnie test 
 
 **[WYKRES: BLOK 15]** Prognoza jednokrokowa na pierwszych 200 przykładach testowych. Wykres pokazuje model ze z góry ustalonym ziarnem 0; nie wybierano najkorzystniejszego ziarna na podstawie testu.
 
-**Uwaga:** Skale pionowe wykresów A–C są logarytmiczne. Krzywe uczenia prezentują średnie po ziarnach, a tabele — średnią i odchylenie ze średniej MSE z pięciu końcowych epok każdego powtórzenia.
-
 ## 4. Analiza i interpretacja
 
 W eksperymencie A najniższy błąd uzyskano dla `hidden=16`, nie dla największego wariantu. Wzrost z 16 do 64 jednostek zwiększał liczbę parametrów modelu z 929 do 12 929 i średni czas treningu, ale nie dawał systematycznej poprawy MSE. W eksperymencie B przejście z okna 10 do 60 wyraźnie poprawiło prognozę, natomiast wyniki okien 60 i 120 są niemal identyczne w porównaniu z ich rozrzutem między ziarnami; nie można uznać przewagi okna 60 za rozstrzygającą. Dłuższe okno pozwala modelowi odczytywać więcej informacji o fazie i kierunku zmian sygnału, ale zwiększa koszt obliczeń.
@@ -132,15 +124,3 @@ W eksperymencie C przy krótkim oknie trzy architektury miały bardzo zbliżone 
 9. Wnioski odnoszą się do jednego syntetycznego sygnału, trzech ziaren i ustalonych hiperparametrów; uogólnienia wymagałyby dalszych testów.
 
 ---
-
-## Do sprawdzenia / uzupełnienia przed oddaniem
-
-- **[RĘCZNIE]** Autor, grupa laboratoryjna i data zajęć w nagłówku.
-- **[BLOK 06 i 07]** Zaktualizuj punkt odniesienia, jeśli uruchomisz model ponownie.
-- **[BLOKI 09, 10 i 11]** Zaktualizuj tabele eksperymentów po ewentualnym ponownym treningu (zwłaszcza czasy wykonania zależne od sprzętu).
-- **[BLOK 12]** Zaktualizuj najlepszą konfigurację i opis porównawczy, jeśli zmieni się ranking.
-- **[BLOKI 13, 14 i 15]** W razie ponownego treningu podmień odpowiednie obrazy w folderze `wykresy_lab02`.
-- **[BLOK 03]** Zweryfikuj rozmiary zbiorów po zmianie długości okna.
-- **[WNIOSKI]** Po zmianie wyników zweryfikuj interpretację i zdania 1–9.
-
-*Notatnik `.ipynb` oraz obrazy stanowią część materiałów do sprawozdania. Wszystkie wartości tabel w tym pliku pochodzą z wykonanych komórek, nie są danymi przykładowymi.*
