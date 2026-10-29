@@ -26,8 +26,8 @@ Celem laboratorium była implementacja i analiza sieci rekurencyjnych przewiduj�
 
 Bazowy **RNN, hidden=32, OKNO=30 (30 epok)** uzyskał test MSE po ostatniej epoce równy **0,003769**, a średnia test MSE z ostatnich pięciu epok wyniosła **0,003857**. Dla tego samego okna heurystyka „następna wartość = ostatnia próbka” uzyskała **0,006309**.
 
-**[ŹRÓDŁO DANYCH: BLOK 06]** W razie ponownego uruchomienia skopiuj MSE po 30. epoce i średnią z pięciu końcowych epok.  
-**[ŹRÓDŁO DANYCH: BLOK 07]** Skopiuj MSE heurystyki dla każdej długości okna, szczególnie dla OKNO=30.
+**[ŹRÓDŁO DANYCH: BLOK 06]** 
+**[ŹRÓDŁO DANYCH: BLOK 07]**
 
 ### 3.2. Eksperyment A — liczba jednostek ukrytych
 
@@ -41,7 +41,7 @@ Ustawienia: `GRU`, `OKNO=30`, `hidden ∈ {8, 16, 32, 64}`.
 | GRU  hidden=32  OKNO=30 | 3 393 | 0,003761 ± 0,000012 | 3.44 |
 | GRU  hidden=64  OKNO=30 | 12 929 | 0,003751 ± 0,000082 | 5.30 |
 
-**[ŹRÓDŁO DANYCH: BLOK 09]** Przy ponownym wykonaniu zaktualizuj wiersze A: liczbę parametrów, MSE średnia ± SD oraz średni czas w sekundach. Wiersz heurystyki pochodzi z BLOKU 07.
+**[ŹRÓDŁO DANYCH: BLOK 09]**
 
 ![Eksperyment A — test MSE](wykresy_lab02/01_eksperyment_A.png)
 
@@ -62,7 +62,7 @@ Ustawienia: `GRU`, `hidden=32`, `OKNO ∈ {10, 30, 60, 120}`. Każde okno wymaga
 | GRU  hidden=32  OKNO=60 | 3 393 | 0,003425 ± 0,000212 | 6.12 |
 | GRU  hidden=32  OKNO=120 | 3 393 | 0,003437 ± 0,000186 | 12.37 |
 
-**[ŹRÓDŁO DANYCH: BLOK 10]** Zaktualizuj MSE, odchylenie standardowe i czas treningu dla wszystkich czterech okien; wartości heurystyki dla odpowiadających okien pobierz z BLOKU 07.
+**[ŹRÓDŁO DANYCH: BLOK 10]** 
 
 ![Eksperyment B — test MSE](wykresy_lab02/02_eksperyment_B.png)
 
@@ -83,7 +83,7 @@ Ustawienia: `hidden=32`, `OKNO=10` lub `OKNO=120`, komórki `RNN`, `LSTM`, `GRU`
 | LSTM  hidden=32  OKNO=120 | 4 513 | 0,003748 ± 0,000135 | 6.45 |
 | GRU  hidden=32  OKNO=120 | 3 393 | 0,003437 ± 0,000186 | 12.37 |
 
-**[ŹRÓDŁO DANYCH: BLOK 11]** Zaktualizuj MSE, odchylenie standardowe, czas i parametry dla sześciu konfiguracji. Powtarzające się wyniki GRU są ponownie wykorzystane z eksperymentu B, a nie trenowane dodatkowo.
+**[ŹRÓDŁO DANYCH: BLOK 11]**
 
 ![Eksperyment C — test MSE](wykresy_lab02/03_eksperyment_C.png)
 
@@ -93,7 +93,7 @@ Ustawienia: `hidden=32`, `OKNO=10` lub `OKNO=120`, komórki `RNN`, `LSTM`, `GRU`
 
 Spośród wszystkich unikalnych badanych konfiguracji najmniejsze średnie test MSE uzyskał **GRU (hidden=32, OKNO=60)**: **0,003425 ± 0,000212**, przy **3393** parametrach i średnim czasie uczenia **6.12 s**. Heurystyka dla tego okna uzyskała MSE **0,006331**. Oznacza to redukcję średniego błędu MSE o około **45.9%** względem heurystyki. W ostatniej epoce dla najlepszej konfiguracji średnia strata treningowa z trzech ziaren wyniosła **0,003105**, a testowa **0,003141**.
 
-**[ŹRÓDŁO DANYCH: BLOK 12]** Odczytaj typ, hidden, OKNO, MSE ± SD, liczbę parametrów, czas i wynik heurystyki najlepszej konfiguracji.
+**[ŹRÓDŁO DANYCH: BLOK 12]**
 
 ![Najlepszy model — strata treningowa i testowa](wykresy_lab02/04_najlepszy_trening_test.png)
 
